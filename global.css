@@ -6,29 +6,40 @@
 
 @theme {
     /* ── Core ── */
-    --color-background: #F5F5F0;
-    --color-foreground: #1A1A2E;
+    /* ── Core (Refined Neutrals) ── */
+    --color-background: #FCFCFC;
+    /* Clean, modern off-white */
+    --color-foreground: #0F172A;
+    /* Deep Slate (better readability than pure navy) */
     --color-card: #FFFFFF;
-    --color-muted: #E4E4E7;
-    --color-muted-foreground: rgba(0, 0, 0, 0.5);
-    --color-border: rgba(0, 0, 0, 0.1);
+    --color-muted: #F1F5F9;
+    /* Soft Slate gray for backgrounds */
+    --color-muted-foreground: #64748B;
+    /* Muted Slate for subtexts */
+    --color-border: #E2E8F0;
+    /* Subtle, clean border */
 
-    /* ── Brand ── */
-    --color-primary: #16A34A;
-    --color-primary-light: #DCFCE7;
-    --color-secondary: #2563EB;
-    --color-secondary-light: #DBEAFE;
+    /* ── Brand (Premium Emerald & Indigo) ── */
+    --color-primary: #232A45;
+    /* Sophisticated Emerald */
+    --color-primary-light: #FCFCFC;
+    --color-secondary: #002147;
+    /* Modern Indigo */
+    --color-secondary-light: #EEF2FF;
 
     /* ── Semantic ── */
-    --color-success: #16A34A;
-    --color-destructive: #DC2626;
-    --color-destructive-light: #FEE2E2;
-    --color-warning: #D97706;
-    --color-warning-light: #FEF3C7;
+    --color-success: #10B981;
+    --color-destructive: #EF4444;
+    /* Brighter, more standard red */
+    --color-destructive-light: #FEF2F2;
+    --color-warning: #F59E0B;
+    --color-warning-light: #FFFBEB;
 
     /* ── Text ── */
-    --color-text-primary: #1A1A2E;
-    --color-text-secondary: #6B7280;
+    --color-text-primary: #0F172A;
+    /* Matches foreground */
+    --color-text-secondary: #475569;
+    /* Slate 600 for high-contrast subtext */
 
     /* ── Spacing ── */
     --spacing-0: 0px;
@@ -49,13 +60,13 @@
     --spacing-20: 80px;
     --spacing-24: 96px;
 
-    /* ── Typography ── */
-    --font-sans: sans-regular;
-    --font-sans-light: sans-light;
-    --font-sans-medium: sans-medium;
-    --font-sans-semibold: sans-semibold;
-    --font-sans-bold: sans-bold;
-    --font-sans-extrabold: sans-extrabold;
+    /* ── Typography (Updated for Plus Jakarta Sans) ── */
+    --font-sans: 'PlusJakartaSans-Regular';
+    --font-sans-light: 'PlusJakartaSans-Light';
+    --font-sans-medium: 'PlusJakartaSans-Medium';
+    --font-sans-semibold: 'PlusJakartaSans-SemiBold';
+    --font-sans-bold: 'PlusJakartaSans-Bold';
+    --font-sans-extrabold: 'PlusJakartaSans-ExtraBold';
 }
 
 @layer components {
@@ -210,27 +221,27 @@
     }
 
     .home-avatar {
-        @apply size-16 rounded-full bg-primary-light items-center justify-center;
+        @apply size-16 rounded-full bg-primary items-center justify-center;
     }
 
     .home-avatar-text {
-        @apply text-xl font-sans-bold text-primary;
+        @apply text-xl font-sans-bold text-primary-light;
     }
 
     .home-greeting {
-        @apply ml-4 text-2xl font-sans-bold text-foreground;
+        @apply ml-4 text-xl font-sans-bold text-foreground;
     }
 
     .home-greeting-sub {
-        @apply ml-4 text-sm font-sans-medium text-muted-foreground;
+        @apply ml-4 text-xs font-sans-medium text-muted-foreground;
     }
 
     .home-stats-card {
-        @apply flex-1 rounded-2xl bg-card border border-border p-4 items-center;
+        @apply flex-1 rounded-2xl bg-[#f3b058] border border-border p-4 items-center;
     }
 
     .home-stats-value {
-        @apply text-2xl font-sans-extrabold text-foreground;
+        @apply text-2xl font-sans-extrabold text-[#39393f];
     }
 
     .home-stats-label {
@@ -250,11 +261,11 @@
     }
 
     .home-quick-action {
-        @apply flex-1 items-center rounded-2xl border border-border bg-card py-4 gap-2;
+        @apply flex-1 items-center rounded-2xl border border-border bg-[#2C3552] py-4 gap-2;
     }
 
     .home-quick-action-text {
-        @apply text-xs font-sans-semibold text-foreground;
+        @apply text-xs font-sans-semibold text-white;
     }
 
     /* ─────────────────────────────────────────
@@ -265,11 +276,11 @@
     }
 
     .list-title {
-        @apply text-xl font-sans-bold text-foreground;
+        @apply text-2xl font-extrabold font-sans-bold text-foreground/80;
     }
 
     .list-action {
-        @apply rounded-full border border-border px-4 py-1;
+        @apply rounded-full border-2 border-[#333] px-4 py-1;
     }
 
     .list-action-text {
@@ -288,15 +299,15 @@
     }
 
     .customer-avatar {
-        @apply size-12 rounded-full bg-primary-light items-center justify-center;
+        @apply size-12 rounded-full bg-primary items-center justify-center;
     }
 
     .customer-avatar-text {
-        @apply text-base font-sans-bold text-primary;
+        @apply text-base font-extrabold font-sans-bold text-primary-light;
     }
 
     .customer-name {
-        @apply text-base font-sans-bold text-foreground;
+        @apply text-base font-bold font-sans-bold text-foreground;
     }
 
     .customer-phone {
@@ -308,7 +319,7 @@
     }
 
     .customer-points-text {
-        @apply text-xs font-sans-bold text-primary;
+        @apply text-xs font-sans-bold font-bold text-primary;
     }
 
     /* ─────────────────────────────────────────
@@ -410,30 +421,30 @@
     }
 
     /* ─────────────────────────────────────────
-       TRANSACTION
+    TRANSACTION
     ───────────────────────────────────────── */
     .transaction-card {
-        @apply rounded-2xl border border-border bg-card p-4 mb-3 flex-row items-center justify-between;
+        @apply rounded-2xl border border-border bg-[#f3b058] p-4 mb-3 flex-row items-center justify-between;
     }
 
     .transaction-amount {
-        @apply text-base font-sans-bold text-foreground;
+        @apply text-lg font-bold font-sans-bold text-foreground/90;
     }
 
     .transaction-meta {
-        @apply text-xs font-sans-medium text-muted-foreground;
+        @apply text-xs font-bold font-sans-medium text-muted-foreground;
     }
 
     .points-earned-badge {
-        @apply rounded-full bg-primary-light px-3 py-1;
+        @apply rounded-full bg-[#fdd197] px-3 py-1;
     }
 
     .points-earned-text {
-        @apply text-xs font-sans-bold text-primary;
+        @apply text-xs font-bold font-sans-bold text-[#222222];
     }
 
     /* ─────────────────────────────────────────
-       MODAL
+    MODAL
     ───────────────────────────────────────── */
     .modal-overlay {
         @apply flex-1 bg-black/50;
