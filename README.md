@@ -1,50 +1,134 @@
-# Welcome to your Expo app 👋
+# 🌱 BizGrow — CRM + AI Marketing Engine for Kirana Stores
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+BizGrow is a hyperlocal CRM and AI-powered marketing platform built for small retail (kirana) store owners. It helps merchants track customers, log transactions, manage a loyalty points system, and run targeted WhatsApp campaigns — all from a simple mobile app. The AI engine lets merchants describe their stock or offer in plain language and instantly generates a ready-to-send WhatsApp message for the right customers.
 
-## Get started
+---
 
-1. Install dependencies
+## ✨ Features
 
-   ```bash
-   npm install
-   ```
+### 👤 Customer Management
 
-2. Start the app
+- Add customers with name, phone number, and tags
+- View full customer profile with visit history and points
+- Search and filter customers by name, phone, or tag
+- Editable tag system (Regular, High Spender, New, custom)
 
-   ```bash
-   npx expo start
-   ```
+### 🧾 Transaction Tracking
 
-In the output, you'll find options to open the app in a
+- Log transactions with itemized purchases and amounts
+- Auto-assign loyalty points on every transaction
+- View full transaction history per customer
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 🎯 Loyalty Points System
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Earn points based on purchase value (e.g. ₹10 = 1 point)
+- View current balance and total earned per customer
+- Manual point redemption by merchant
 
-## Get a fresh project
+### 🤖 AI Campaign Generation
 
-When you're ready, run:
+- Merchant describes stock or offer in plain text
+- Claude AI generates a targeted WhatsApp-ready message
+- Merchant can review and edit before sending
+
+### 📣 Campaign Management
+
+- Filter target audience by customer tags
+- See matched customer count before sending
+- Send campaigns via WhatsApp deep link (`wa.me`)
+- View past campaigns with date, tags, and reach
+
+### 📊 Analytics
+
+- Revenue overview: Today · This Week · This Month
+- Bar/line chart for revenue trends
+- Stats: Total Transactions, New Customers, Points Redeemed
+- Top 5 customers by spend
+- Customer distribution by tag (donut chart)
+
+### ⚙️ Settings
+
+- Edit store name
+- Configure points rate (₹X = 1 point)
+- Set redemption rules
+- Logout
+
+---
+
+## 📱 Screens
+
+| Screen           | Description                                                                |
+| ---------------- | -------------------------------------------------------------------------- |
+| Login / Signup   | Email + password auth, store name on signup                                |
+| Home / Dashboard | Revenue card, stats row, quick actions, recent transactions, top customers |
+| Customers        | Searchable list with tag filters, add customer FAB                         |
+| Customer Profile | Full profile, points card, transaction history, WhatsApp button            |
+| Log Transaction  | Customer picker, itemized entry, live points preview                       |
+| Campaigns        | AI generator, audience selector, WhatsApp send, past campaigns             |
+| Analytics        | Revenue chart, stats cards, top customers, tag breakdown                   |
+| Settings         | Store config, points rate, logout                                          |
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+| Tech                       | Purpose                               |
+| -------------------------- | ------------------------------------- |
+| React Native (Expo SDK 54) | Cross-platform mobile app             |
+| Expo Router                | File-based navigation                 |
+| NativeWind (v4)            | Tailwind CSS styling for React Native |
+| TypeScript                 | Type safety                           |
+
+### Backend
+
+| Tech       | Purpose                      |
+| ---------- | ---------------------------- |
+| Node.js    | Runtime                      |
+| Express.js | REST API framework           |
+| Supabase   | Database (PostgreSQL) + Auth |
+
+### Integrations
+
+| Tech                   | Purpose                         |
+| ---------------------- | ------------------------------- |
+| Claude API (Anthropic) | AI campaign message generation  |
+| WhatsApp `wa.me`       | Deep link for sending campaigns |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- Expo CLI
+- Android/iOS device or emulator
+
+### Installation
 
 ```bash
-npm run reset-project
+# Clone the repo
+git clone https://github.com/Aryansinha2811/BizGrow.git
+cd BizGrow
+
+# Install dependencies
+npm install
+
+# Start the dev server
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 👨‍💻 Author
 
-## Learn more
+**Aryan Sinha**
 
-To learn more about developing your project with Expo, look at the following resources:
+- GitHub: [@Aryansinha2811](https://github.com/Aryansinha2811)
+- LinkedIn: [aryan-sinha-7157a2271](https://linkedin.com/in/aryan-sinha-7157a2271)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 📄 License
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+MIT License — feel free to use and modify.
